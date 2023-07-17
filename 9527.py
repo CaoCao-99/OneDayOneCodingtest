@@ -1,8 +1,10 @@
-n_group = [0,1]
+#print(2**60)
 
+n_group = [0,1]
 for i in range(2,60):
     n_group.append(2**(i-1))
 
+#print(n_group)
 
 def get_count(cnt, n_group):
     for i in range(59):
@@ -17,7 +19,7 @@ def rec(i, sum_b, n_group):
     n_i = get_count(i, n_group)
     n_n = i - n_group[n_i]
 
-    return sum_b[n_i-1] + n_n + 1 + rec(n_n+1, sum_b, n_group)
+    return sum_b[n_i-1] + n_n + 1 + rec(n_n, sum_b, n_group)
 
 
 start, end = map(int,input().split())
@@ -32,23 +34,23 @@ sum_b[1]=1
 #rec(50, sum_b)
 
 #재귀문 써야 할 듯
-for i in range(1, 51):
+for i in range(1, 56):
     sum_b[i] = 2**(i-1) + sum(sum_b[:i])
 
-for i in range(1, 51):
+for i in range(1, 56):
     sum_b[i] += sum_b[i-1]
 
-print(s_c, start - n_group[s_c], e_c, end - n_group[e_c])
+#print(s_c, start - n_group[s_c], e_c, end - n_group[e_c])
 #print(2 ** 60)
 if s_c == 0:
     ans_s =0
 else:
-    ans_s = sum_b[s_c-1] + start - n_group[s_c] + 1 + rec(start - n_group[s_c] + 1 , sum_b, n_group)
+    ans_s = sum_b[s_c-1] + start - n_group[s_c] + 1 + rec(start - n_group[s_c], sum_b, n_group)
 
 if e_c == 0:
     ans_e = 0
 else:    
-    ans_e = sum_b[e_c-1] + end - n_group[e_c] + 1 +rec(end - n_group[e_c] + 1, sum_b, n_group)
+    ans_e = sum_b[e_c-1] + end - n_group[e_c] + 1 +rec(end - n_group[e_c], sum_b, n_group)
 
 
 
@@ -57,9 +59,12 @@ print(ans_e - ans_s)
 #1000,1001,1010,1011, 1100
 #3, 4, (4) -> 
 
+# 1 10000000000 (10 ^ 10)
 
 
+# 10^15까지는 가능
+#1000000000000000 10000000000000000
 
+#999999999999999 9999999999999999
 
-
-
+#9999999999999999 10000000000000000
