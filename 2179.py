@@ -7,8 +7,6 @@ for i in range(n):
 
 sorted_data = list(sorted(data))
 for i in range(n-1):
-    if sorted_data[i][1] == n-1:
-        print("asd")
     if sorted_data[i][0] == sorted_data[i+1][0]:
         continue
     length = min(len(sorted_data[i][0]), len(sorted_data[i+1][0]))
