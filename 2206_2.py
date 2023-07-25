@@ -10,10 +10,9 @@ dp = [[[0 for _ in range(2)]for _ in range(m)]for _ in range(n)]
 move = [(-1,0),(1,0),(0,1),(0,-1)]
 q = deque()
 q.append([0,0,1])
-
 dp[0][0][1] = 1
 while q:
-    y,x,crush = q.pop(0)
+    y,x,crush = q.popleft()
     if y == n-1 and x == m-1:
         print(dp[y][x][crush])
         exit()
