@@ -9,8 +9,7 @@ for i in range(1,b):
     data_b[i] += data_b[i-1]
 pizza_a = dict()
 pizza_b = dict()
-pizza_a[0] = 1
-pizza_b[0] = 1
+
 
 #0,1
 
@@ -41,7 +40,7 @@ for i in range(b):
 for i in range(a-1):#
     for j in range(1,a):
         if i+j >= a:
-            kab = data_a[j] - data_a[i] + data_a[(i+j)%a]
+            kab = data_a[a-1] - data_a[i] + data_a[(i+j)%a]
             if not kab in pizza_a:
                 pizza_a[kab] = 1
             else:
@@ -56,7 +55,7 @@ for i in range(a-1):#
 for i in range(b-1):#
     for j in range(1,b):
         if i+j >= b:
-            kab = data_b[j] - data_b[i] + data_b[(i+j)%b]
+            kab = data_b[b-1] - data_b[i] + data_b[(i+j)%b]
             if not kab in pizza_b:
                 pizza_b[kab] = 1
             else:
@@ -70,6 +69,8 @@ for i in range(b-1):#
 
 
 answer = 0
+pizza_a[0] = 1
+pizza_b[0] = 1
 for i in range(size+1):
     if i in pizza_a and size-i in pizza_b:
         answer += pizza_a[i] * pizza_b[size-i]
