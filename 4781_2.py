@@ -11,7 +11,7 @@ while True:
         break
     for i in range(n):
         c, p = map(float,input().split())
-        candy.append([int(c),int(p*100)])
+        candy.append([int(c),int(p*100+0.5)])
     dp = [0] * (budget+1)
     for i in range(1, budget+1):
         for j in range(n):
