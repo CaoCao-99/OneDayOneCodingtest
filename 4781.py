@@ -24,3 +24,4 @@ while True:
     answer.append(max(visit.values()))
 for i in answer:
     print(i)
+    
