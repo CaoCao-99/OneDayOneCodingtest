@@ -6,6 +6,7 @@ special_map2 = [20,22,24,25,30,35,40]
 special_map3 = [30,28,27,26,25,30,35,40]
 horse = [[normal_map, 0],[normal_map, 0],[normal_map, 0],[normal_map, 0]] #말이 속한 맵, 말이 속한 맵안에서의 위치(인덱스)
 answer = 0
+
 def rec(horse, cnt, ans): #현재 말이 어떤 map에 있는지 표현, 현재 진행한 횟수, 현재까지 오는데 얻은 포인트
     global answer
     if cnt == 10:
