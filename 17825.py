@@ -29,7 +29,6 @@ def rec(horse, cnt, ans, visit): #현재 말이 어떤 map에 있는지 표현, 
     if cnt == 10:
         answer = max(answer, ans)
         return
-    
     for i in range(4): 
         new_horse = copy.deepcopy(horse)
         now_map = get_func(new_horse[i][0])
